@@ -10,8 +10,8 @@ public class PersonForm {
     @Size(min=2, max=30, message = "{name.size}")
     private String name;
 
-    @NotNull
-    @Min(value = 18,message = "{age.min}")
+    @NotNull(message="{age.notempty}")
+    @Min(value = 20,message = "{age.min}")
     private Integer age;
 
     public String getName() {
@@ -22,6 +22,7 @@ public class PersonForm {
         this.name = name;
     }
 
+    @SuppressWarnings("unused")
     public Integer getAge() {
         return age;
     }
